@@ -1,0 +1,1 @@
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/industrial_robot_simulator/lib/pkgconfig/industrial_robot_simulator.pc

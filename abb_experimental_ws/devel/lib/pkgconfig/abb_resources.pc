@@ -1,0 +1,1 @@
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/abb_resources/lib/pkgconfig/abb_resources.pc

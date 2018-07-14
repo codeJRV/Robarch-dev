@@ -1,0 +1,47 @@
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+MongoDB_INCLUDE_DIR (ADVANCED)
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+   used as include directory in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+MongoDB_LIBRARIES (ADVANCED)
+    linked by target "warehouse_ros" in directory /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/src/warehouse_ros_mongo
+

@@ -1,0 +1,1 @@
+cmd='/usr/local/bin/cmake;-DCMAKE_INSTALL_PREFIX=/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/argus_utils;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

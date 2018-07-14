@@ -1,0 +1,8 @@
+prefix=/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/movebot
+
+Name: movebot
+Description: Description of movebot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/movebot/lib 
+Requires: 

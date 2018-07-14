@@ -1,0 +1,13 @@
+! TACO Target Robot: GORT
+MODULE MainModule
+VAR speeddata speed:=[10,24,5000,1000];
+PERS tooldata custom_tool1 := [TRUE, [[0,0,0], [1,0,0,0]], [5,[0.00,0.00,10.00],[1,0,0,0],0,0,0]];
+PROC Main()
+ConfL \Off;
+ConfJ \Off;
+MoveL [[288,-42.57,371],[0,0.707107,0.707107,0],[0,-1,-1,0],[0,9E9,9E9,9E9,9E9,9E9]],speed,z10,custom_tool1\WObj:=WObj0;
+MoveL [[403.02,-42.3,371],[0,0,1,0],[0,-1,-1,0],[0,9E9,9E9,9E9,9E9,9E9]],speed,z10,custom_tool1\WObj:=WObj0;
+MoveL [[403.02,73,371],[0,-0.707107,0.707107,0],[0,-1,-1,0],[0,9E9,9E9,9E9,9E9,9E9]],speed,z10,custom_tool1\WObj:=WObj0;
+MoveL [[288,72.73,371],[0,1,0,0],[0,-1,-1,0],[0,9E9,9E9,9E9,9E9,9E9]],speed,z10,custom_tool1\WObj:=WObj0;
+ENDPROC
+ENDMODULE

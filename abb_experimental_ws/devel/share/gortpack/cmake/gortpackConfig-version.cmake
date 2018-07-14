@@ -1,0 +1,1 @@
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/gortpack/share/gortpack/cmake/gortpackConfig-version.cmake

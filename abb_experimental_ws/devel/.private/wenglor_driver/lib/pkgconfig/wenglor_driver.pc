@@ -1,0 +1,8 @@
+prefix=/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/wenglor_driver
+
+Name: wenglor_driver
+Description: Description of wenglor_driver
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/wenglor_driver/lib 
+Requires: 

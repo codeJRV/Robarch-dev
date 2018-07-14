@@ -1,0 +1,7 @@
+rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map my_frame 10
+
+00:30:
+
+00:00:23:25:4b:07 Robot
+
+00:E0:4C:68:00:17 : MyPC

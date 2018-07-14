@@ -1,0 +1,4 @@
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/pkgconfig/robot_pose_publisher.pc
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/robot_pose_publisher/robot_pose_publisher
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/robot_pose_publisher/cmake/robot_pose_publisherConfig-version.cmake
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/robot_pose_publisher/cmake/robot_pose_publisherConfig.cmake

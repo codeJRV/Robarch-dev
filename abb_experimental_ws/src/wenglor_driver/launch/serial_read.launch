@@ -1,0 +1,3 @@
+<launch>
+<node name="wenglor_node" pkg="wenglor_driver" type="wenglor.py" respawn="false" output="screen" launch-prefix="terminator -x"/>
+</launch>

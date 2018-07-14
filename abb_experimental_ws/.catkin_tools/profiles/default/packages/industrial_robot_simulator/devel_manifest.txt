@@ -1,0 +1,4 @@
+industrial_core/industrial_robot_simulator
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/industrial_robot_simulator/lib/pkgconfig/industrial_robot_simulator.pc /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/pkgconfig/industrial_robot_simulator.pc
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/industrial_robot_simulator/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig.cmake /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig.cmake
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/industrial_robot_simulator/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig-version.cmake /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig-version.cmake

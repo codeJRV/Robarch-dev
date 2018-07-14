@@ -1,0 +1,4 @@
+rosserial/rosserial_embeddedlinux
+/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_embeddedlinux/lib/pkgconfig/rosserial_embeddedlinux.pc /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/pkgconfig/rosserial_embeddedlinux.pc
+/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_embeddedlinux/share/rosserial_embeddedlinux/cmake/rosserial_embeddedlinuxConfig-version.cmake /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_embeddedlinux/cmake/rosserial_embeddedlinuxConfig-version.cmake
+/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_embeddedlinux/share/rosserial_embeddedlinux/cmake/rosserial_embeddedlinuxConfig.cmake /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_embeddedlinux/cmake/rosserial_embeddedlinuxConfig.cmake

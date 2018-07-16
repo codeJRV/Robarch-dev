@@ -45,7 +45,7 @@ import time
 from std_msgs.msg import Float64
 
 def talker():
-    pub = rospy.Publisher('sensor_readings', Float64, queue_size=10)
+    pub = rospy.Publisher('sensor_readings', Float64, queue_size=1)
     rospy.init_node('wenglor_node', anonymous=True)
     rate = rospy.Rate(400) # 10hz
     ser  =serial.Serial('/dev/ttyUSB0', 38400)

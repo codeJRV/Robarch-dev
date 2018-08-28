@@ -11,8 +11,8 @@ from itertools import izip_longest
 
 import read_serial
 
-INPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/GFT.txt"
-OUTPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Corrected/GFT_op.txt"
+INPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Output80.txt"
+OUTPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Corrected/Output80_op.txt"
 REQUIRED_OFFSET = 0.05
 
 
@@ -62,7 +62,7 @@ def move_gort():
   for coordinates in ip_waypoints:
     wpose.position.x = float(coordinates[0])/1000
     wpose.position.y = float(coordinates[1])/1000
-    wpose.position.z = float(coordinates[2])/1000
+    wpose.position.z = float(coordinates[2])/1000 + 0.25
     waypoints.append(copy.deepcopy(wpose))
 
   (plan3, fraction) = group.compute_cartesian_path(

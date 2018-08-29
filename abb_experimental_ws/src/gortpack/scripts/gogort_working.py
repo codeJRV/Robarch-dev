@@ -86,26 +86,18 @@ def move_gort():
   rospy.sleep(5)
 
   is_safe = raw_input("Plan ok to exexute? : y/n ")
+  slow_move = raw_input("Move slow to checkpoints? : y/n ")
 
-  if(is_safe=='y'): 
-
-    waypoints = []
-    wpose.position.x = float(ip_waypoints[0][0])/1000
-    wpose.position.y = float(ip_waypoints[0][1])/1000
-    wpose.position.z = float(ip_waypoints[0][2])/1000 
-    waypoints.append(copy.deepcopy(wpose))
-    (plan, fraction) = group.compute_cartesian_path(
-                                 waypoints,   # waypoints to follow
-                                 0.01,        # eef_step
-                                 0.0)         # jump_threshold
-
-    group.execute(plan)
-
-    for coordinates in  ip_waypoints:
+  if(is_safe=='y'):                     
+    for coordinates1, coordinates2 in grouper(2, ip_waypoints):
       waypoints=[]
-      wpose.position.x = float(coordinates[0])/1000
-      wpose.position.y = float(coordinates[1])/1000
-      wpose.position.z = float(coordinates[2])/1000 
+      wpose.position.x = float(coordinates1[0])/1000
+      wpose.position.y = float(coordinates1[1])/1000
+      wpose.position.z = float(coordinates1[2])/1000 
+      waypoints.append(copy.deepcopy(wpose))
+      wpose.position.x = float(coordinates2[0])/1000
+      wpose.position.y = float(coordinates2[1])/1000
+      wpose.position.z = float(coordinates2[2])/1000 
       waypoints.append(copy.deepcopy(wpose))
       (plan, fraction) = group.compute_cartesian_path(
                                  waypoints,   # waypoints to follow
@@ -156,24 +148,24 @@ def move_gort():
   # Equation used for correction
   # z_new = z_input - (sensor_reading - required_offset)
 
-
+  corrected_waypoints = []
+  i = 0
   print len(zvals)
   print len(ip_waypoints)
+  res = raw_input("Plan size correct? : y/n ")
+  if(res != 'y'):
+    return
 
+  for coordinates in ip_waypoints:
+    wpose.position.x = float(coordinates[0])/1000
+    wpose.position.y = float(coordinates[1])/1000
+    wpose.position.z = float(coordinates[2])/1000 - ( zvals[i] - REQUIRED_OFFSET )
+    corrected_waypoints.append(copy.deepcopy(wpose))
+    i +=1
 
-  if(len(zvals) ==  len(ip_waypoints)):
-    corrected_waypoints = []
-    i = 0
-
-    for coordinates in ip_waypoints:
-      wpose.position.x = float(coordinates[0])/1000
-      wpose.position.y = float(coordinates[1])/1000
-      wpose.position.z = float(coordinates[2])/1000 - ( zvals[i] - REQUIRED_OFFSET )
-      corrected_waypoints.append(copy.deepcopy(wpose))
-      i +=1
-
+  if(len(waypoints) ==  len(corrected_waypoints)):
     (plan3, fraction) = group.compute_cartesian_path(
-                               corrected_waypoints,   # waypoints to follow
+                               waypoints,   # waypoints to follow
                                0.01,        # eef_step
                                0.0)         # jump_threshold
 
@@ -186,8 +178,15 @@ def move_gort():
 
 
     if(is_safe=='y' and slow_move =='y'):
-      for wpose in corrected_waypoints:
+      for coordinates1, coordinates2 in grouper(2, corrected_waypoints):
         waypoints=[]
+        wpose.position.x = float(coordinates1[0])/1000
+        wpose.position.y = float(coordinates1[1])/1000
+        wpose.position.z = float(coordinates1[2])/1000
+        waypoints.append(copy.deepcopy(wpose))
+        wpose.position.x = float(coordinates2[0])/1000
+        wpose.position.y = float(coordinates2[1])/1000
+        wpose.position.z = float(coordinates2[2])/1000
         waypoints.append(copy.deepcopy(wpose))
         (plan, fraction) = group.compute_cartesian_path(
                                    waypoints,   # waypoints to follow

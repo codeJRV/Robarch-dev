@@ -18,7 +18,9 @@ import time
 
 INPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Output80.txt"
 OUTPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Corrected/Output80_op.txt"
-REQUIRED_OFFSET = 0.05
+REQUIRED_Z_OFFSET = 0.05
+REQUIRED_X_OFFSET = -0.013
+REQUIRED_Y_OFFSET = 0.033
 DIST_CORR  = 52
 
 def grouper(n, iterable, fillvalue=None):
@@ -98,8 +100,14 @@ def move_gort():
                                  waypoints,   # waypoints to follow
                                  0.01,        # eef_step
                                  0.0)         # jump_threshold
+    
+    is_safe = raw_input("Move to starting point? : y/n ")
+    if(is_safe):
+      group.execute(plan)
+    else:
+      return
 
-    group.execute(plan)
+
 
     for coordinates in  ip_waypoints:
       waypoints=[]
@@ -154,7 +162,7 @@ def move_gort():
     return
 
   # Equation used for correction
-  # z_new = z_input - (sensor_reading - required_offset)
+  # z_new = z_input - (sensor_reading - required_z_offset)
 
 
   print len(zvals)
@@ -166,9 +174,9 @@ def move_gort():
     i = 0
 
     for coordinates in ip_waypoints:
-      wpose.position.x = float(coordinates[0])/1000
-      wpose.position.y = float(coordinates[1])/1000
-      wpose.position.z = float(coordinates[2])/1000 - ( zvals[i] - REQUIRED_OFFSET )
+      wpose.position.x = float(coordinates[0])/1000 - REQUIRED_X_OFFSET
+      wpose.position.y = float(coordinates[1])/1000 - REQUIRED_Y_OFFSET
+      wpose.position.z = float(coordinates[2])/1000 - ( zvals[i] - REQUIRED_Z_OFFSET )
       corrected_waypoints.append(copy.deepcopy(wpose))
       i +=1
 

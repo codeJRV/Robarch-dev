@@ -9,12 +9,17 @@ import geometry_msgs.msg
 from std_msgs.msg import String
 from itertools import izip_longest
 
-import read_serial
+# import read_serial
+
+
+import serial
+import time
+
 
 INPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Output80.txt"
 OUTPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Corrected/Output80_op.txt"
 REQUIRED_OFFSET = 0.05
-
+DIST_CORR  = 52
 
 def grouper(n, iterable, fillvalue=None):
     "grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx"
@@ -30,6 +35,8 @@ def extract_input_waypoints(path):
     line = line[8:]
     coordinates  = line.split(',')
     ip_waypoints.append(coordinates)
+  
+  # print ip_waypoints
 
   return ip_waypoints
 
@@ -46,7 +53,12 @@ def move_gort():
                                       '/move_group/display_planned_path',
                                       moveit_msgs.msg.DisplayTrajectory,
                                       queue_size=20)
-  sensor = read_serial.ReadSerial()
+  # sensor = read_serial.ReadSerial()
+
+  ser  = serial.Serial('/dev/ttyUSB0', 38400)
+  ser.write('/000R4D.')
+  time.sleep(0.5)
+
   print "============ Waiting for RVIZ..."
   rospy.sleep(10)
 
@@ -62,7 +74,7 @@ def move_gort():
   for coordinates in ip_waypoints:
     wpose.position.x = float(coordinates[0])/1000
     wpose.position.y = float(coordinates[1])/1000
-    wpose.position.z = float(coordinates[2])/1000 + 0.25
+    wpose.position.z = float(coordinates[2])/1000 
     waypoints.append(copy.deepcopy(wpose))
 
   (plan3, fraction) = group.compute_cartesian_path(
@@ -81,11 +93,11 @@ def move_gort():
       waypoints=[]
       wpose.position.x = float(coordinates1[0])/1000
       wpose.position.y = float(coordinates1[1])/1000
-      wpose.position.z = float(coordinates1[2])/1000
+      wpose.position.z = float(coordinates1[2])/1000 
       waypoints.append(copy.deepcopy(wpose))
       wpose.position.x = float(coordinates2[0])/1000
       wpose.position.y = float(coordinates2[1])/1000
-      wpose.position.z = float(coordinates2[2])/1000
+      wpose.position.z = float(coordinates2[2])/1000 
       waypoints.append(copy.deepcopy(wpose))
       (plan, fraction) = group.compute_cartesian_path(
                                  waypoints,   # waypoints to follow
@@ -93,11 +105,35 @@ def move_gort():
                                  0.0)         # jump_threshold
       
       print("Executing trajectory")
-      group.execute(plan)
-      dist = sensor.getDist()
+
+      dist = 400.0
+      ser.write('/020D0059.')
+      seq = []
+      count = 1
+      while(True):
+        flag = False
+        for c in ser.read():
+	        #print(c)
+          seq.append(c) #convert from ANSII
+          joined_seq = ''.join(str(v) for v in seq) #Make a string from array
+          if c == '.':
+            #print("Line " + str(count) + ': ' + joined_seq[8:14] + "Time : " + str(rospy.get_time()))
+            seq = []
+            ser.write('/020D0059.')
+            time.sleep(0.005)
+            count += 1
+            dist_str = joined_seq[8:11]
+            if(dist_str.isdigit()):
+              dist = float( int(dist_str) + DIST_CORR )/1000
+              flag = True
+              break
+        if (flag == True):
+          break  
+
       print('Z dist reading :',dist)
       zvals.append(dist)
-    
+      group.execute(plan)    
+
     # Write the Z values to an output file 
     opfile = open(OUTPUT_FILE_PATH, 'w')
     for item in zvals:
@@ -114,6 +150,11 @@ def move_gort():
 
   corrected_waypoints = []
   i = 0
+  print len(zvals)
+  print len(ip_waypoints)
+  res = raw_input("Plan size correct? : y/n ")
+  if(res != 'y'):
+    return
 
   for coordinates in ip_waypoints:
     wpose.position.x = float(coordinates[0])/1000
@@ -154,9 +195,6 @@ def move_gort():
 
         print("Executing trajectory")
         group.execute(plan)
-        dist = sensor.getDist()
-        print('Z dist reading :',dist)
-        zvals.append(dist)
 
     elif(is_safe=='y'):
       print("Executing trajectory")

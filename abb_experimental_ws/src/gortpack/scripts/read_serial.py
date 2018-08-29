@@ -22,16 +22,17 @@ class ReadSerial:
       seq.append(c) #convert from ANSII
       joined_seq = ''.join(str(v) for v in seq) #Make a string from array
 
-    if c == '.':
-      #print("Line " + str(count) + ': ' + joined_seq[8:14] + "Time : " + str(rospy.get_time()))
-      seq = []
-      self.ser.write('/020D0059.')
-      time.sleep(0.005)
-      count += 1
-      dist_str = joined_seq[8:11]
-      if(dist_str.isdigit()):
-        dist = float( int(dist_str) + DIST_CORR )/1000
-        return dist
+      if c == '.':
+        #print("Line " + str(count) + ': ' + joined_seq[8:14] + "Time : " + str(rospy.get_time()))
+        seq = []
+        self.ser.write('/020D0059.')
+        time.sleep(0.005)
+        count += 1
+        dist_str = joined_seq[8:11]
+        if(dist_str.isdigit()):
+          dist = float( int(dist_str) + DIST_CORR )/1000
+          print dist
+          return dist
       
 
   def __del__(self):

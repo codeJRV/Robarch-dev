@@ -1,7 +1,7 @@
 <launch>
 
   <include file="$(find abb_irb1200_7_70_moveit_config )/launch/gort.launch"/>
-  <include file="$(find wenglor_driver )/launch/serial_read.launch"/>
+  <!-- <include file="$(find wenglor_driver )/launch/serial_read.launch"/> -->
   <node name="gogort_node" pkg="gortpack" type="gogort.py" respawn="false" output="screen" />
   <!-- <node name="trackgort_node" pkg="gortpack" type="trackgort.py" respawn="false" output="screen" launch-prefix="terminator -x"/> -->
 

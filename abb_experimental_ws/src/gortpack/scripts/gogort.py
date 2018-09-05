@@ -18,9 +18,9 @@ import time
 
 INPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Output80.txt"
 OUTPUT_FILE_PATH = "/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/Pattern/Corrected/Output80_op.txt"
-REQUIRED_Z_OFFSET = 0.05
-REQUIRED_X_OFFSET = -0.013
-REQUIRED_Y_OFFSET = 0.033
+REQUIRED_Z_OFFSET = 0.105 # 0.05 for gort
+REQUIRED_X_OFFSET = 0.04
+REQUIRED_Y_OFFSET = -0.005
 DIST_CORR  = 52
 
 def grouper(n, iterable, fillvalue=None):
@@ -107,7 +107,7 @@ def move_gort():
     else:
       return
 
-
+    continue_moving = raw_input("Press any key + enter to start robot")
 
     for coordinates in  ip_waypoints:
       waypoints=[]
@@ -191,6 +191,7 @@ def move_gort():
 
     is_safe = raw_input("Plan ok to exexute? : y/n ")
     slow_move = raw_input("Move slow to checkpoints? : y/n ")
+    calibrate = raw_input("Break at first point for calibration xyz? : y/n ")
 
 
     if(is_safe=='y' and slow_move =='y'):
@@ -204,6 +205,8 @@ def move_gort():
 
         print("Executing trajectory")
         group.execute(plan)
+        if(calibrate =='y'):
+          break
 
     elif(is_safe=='y'):
       print("Executing trajectory")

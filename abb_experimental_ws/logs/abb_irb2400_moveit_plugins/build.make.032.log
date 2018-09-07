@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target abb_irb2400_manipulator_moveit_ikfast_plugin[0m
+[ 50%] [32mBuilding CXX object irb2400_kinematics/CMakeFiles/abb_irb2400_manipulator_moveit_ikfast_plugin.dir/src/abb_irb2400_manipulator_ikfast_moveit_plugin.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/abb_irb2400_moveit_plugins/lib/libabb_irb2400_manipulator_moveit_ikfast_plugin.so[0m
+[100%] Built target abb_irb2400_manipulator_moveit_ikfast_plugin

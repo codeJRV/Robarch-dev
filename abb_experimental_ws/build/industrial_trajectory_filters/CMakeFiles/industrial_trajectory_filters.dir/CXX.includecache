@@ -439,7 +439,7 @@ set
 -
 Eigen/Core
 -
-console_bridge/console.h
+moveit/robot_model/robot_model.h
 -
 
 /opt/ros/kinetic/include/moveit/collision_detection/collision_detector_allocator.h
@@ -550,8 +550,6 @@ moveit_msgs/MoveItErrorCodes.h
 moveit/macros/class_forward.h
 -
 ros/node_handle.h
--
-console_bridge/console.h
 -
 boost/function.hpp
 -
@@ -715,8 +713,6 @@ moveit/macros/class_forward.h
 -
 moveit/exceptions/exceptions.h
 -
-console_bridge/console.h
--
 urdf/model.h
 -
 srdfdom/model.h
@@ -764,6 +760,8 @@ moveit_msgs/RobotTrajectory.h
 moveit/robot_model/robot_model.h
 -
 moveit/robot_state/attached_body.h
+-
+moveit/macros/deprecation.h
 -
 sensor_msgs/JointState.h
 -

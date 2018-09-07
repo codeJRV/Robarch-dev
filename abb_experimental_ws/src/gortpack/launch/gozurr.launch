@@ -3,7 +3,7 @@
   <include file="$(find abb_irb120_moveit_config )/launch/abb120unknown.launch"/>
   <!-- <include file="$(find wenglor_driver )/launch/serial_read.launch"/> -->
   <node name="gogort_node" pkg="gortpack" type="gogort.py" respawn="false" output="screen" />
-  <!-- <node name="trackgort_node" pkg="gortpack" type="trackgort.py" respawn="false" output="screen" launch-prefix="terminator -x"/> -->
+  <node name="arduino_node" pkg="rosserial_python" type="serial_node.py" respawn="false" output="screen" launch-prefix="terminator -x" args="/dev/ttyACM0"/>
 
 
 </launch>

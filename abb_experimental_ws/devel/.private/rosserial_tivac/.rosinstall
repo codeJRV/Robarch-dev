@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/rosserial_tivac/setup.sh

@@ -1,0 +1,1 @@
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/rosserial_msgs/share/gennodejs/ros/rosserial_msgs/msg/_index.js

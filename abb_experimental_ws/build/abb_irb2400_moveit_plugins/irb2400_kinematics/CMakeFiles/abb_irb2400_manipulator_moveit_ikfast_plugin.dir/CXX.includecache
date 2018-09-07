@@ -411,8 +411,6 @@ moveit/macros/class_forward.h
 -
 ros/node_handle.h
 -
-console_bridge/console.h
--
 boost/function.hpp
 -
 string

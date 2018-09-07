@@ -1,0 +1,1 @@
+/home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/.private/rosserial_arduino/share/gennodejs/ros/rosserial_arduino/srv/_index.js

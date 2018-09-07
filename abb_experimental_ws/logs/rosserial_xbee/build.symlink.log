@@ -1,0 +1,20 @@
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/pkgconfig/rosserial_xbee.pc
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/xbee/__init__.py
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/rosserial_xbee/__init__.py
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig.cmake
+Symlinking /home/jrv/Research/RoboticArcitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig-version.cmake
+Cleaning: (/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_xbee/lib/pkgconfig/rosserial_xbee.pc, /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/pkgconfig/rosserial_xbee.pc)
+Cleaning: (/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_xbee/lib/python2.7/dist-packages/xbee/__init__.py, /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/xbee/__init__.py)
+Cleaning: (/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_xbee/lib/python2.7/dist-packages/rosserial_xbee/__init__.py, /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/rosserial_xbee/__init__.py)
+Cleaning: (/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_xbee/share/rosserial_xbee/cmake/rosserial_xbeeConfig.cmake, /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig.cmake)
+Cleaning: (/home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/.private/rosserial_xbee/share/rosserial_xbee/cmake/rosserial_xbeeConfig-version.cmake, /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig-version.cmake)
+Unlinking: /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/pkgconfig/rosserial_xbee.pc
+Already unlinked: {}
+Unlinking: /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/xbee/__init__.py
+Already unlinked: {}
+Unlinking: /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/lib/python2.7/dist-packages/rosserial_xbee/__init__.py
+Already unlinked: {}
+Unlinking: /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig.cmake
+Already unlinked: {}
+Unlinking: /home/jrv/Research/RoboticArchitecture/abb_experimental_ws/devel/share/rosserial_xbee/cmake/rosserial_xbeeConfig-version.cmake
+Already unlinked: {}

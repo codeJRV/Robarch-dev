@@ -7,6 +7,7 @@ import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
 from std_msgs.msg import String
+from std_msgs.msg import Empty
 from itertools import izip_longest
 
 # import read_serial
@@ -55,6 +56,10 @@ def move_gort():
                                       '/move_group/display_planned_path',
                                       moveit_msgs.msg.DisplayTrajectory,
                                       queue_size=20)
+
+  extruder_publisher = rospy.Publisher( '/toggle_led', Empty, queue_size = 10 )
+
+
   # sensor = read_serial.ReadSerial()
 
   ser  = serial.Serial('/dev/ttyUSB0', 38400)
@@ -195,6 +200,7 @@ def move_gort():
 
 
     if(is_safe=='y' and slow_move =='y'):
+      extruder_publisher.publish()
       for wpose in corrected_waypoints:
         waypoints=[]
         waypoints.append(copy.deepcopy(wpose))
@@ -207,10 +213,27 @@ def move_gort():
         group.execute(plan)
         if(calibrate =='y'):
           break
+      extruder_publisher.publish()
 
     elif(is_safe=='y'):
+      extruder_publisher.publish()
+      rospy.sleep(1)
       print("Executing trajectory")
       group.execute(plan3)
+      rospy.sleep(1)
+      print("Finished trajectory")
+      extruder_publisher.publish()
+      waypoints = []
+      wpose.position.x = float(ip_waypoints[0][0])/1000
+      wpose.position.y = float(ip_waypoints[0][1])/1000
+      wpose.position.z = float(ip_waypoints[0][2])/1000 
+      waypoints.append(copy.deepcopy(wpose))
+      (plan, fraction) = group.compute_cartesian_path(
+                                   waypoints,   # waypoints to follow
+                                   0.01,        # eef_step
+                                   0.0)         # jump_threshold
+      group.execute(plan)
+
     else:
       print "============ STOPPING"
       rospy.sleep(5)
